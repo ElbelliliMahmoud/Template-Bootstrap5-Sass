@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Custom variable*/
+
+$font-family: 'Manrope',
+sans-serif;
+$gradient-text: linear-gradient(89.97deg,
+#AE67FA 1.84%,
+#F49867 102.67%);
+$gradient-bar: linear-gradient(103.22deg,
+#AE67FA -13.86%,
+#F49867 99.55%);
+$color-bg: #040C18;
+$color-footer: #031B34;
+$color-blog: #042c54;
+$color-text: #81AFDD;
+$color-subtext: #FF8A71;
+
+/*Mixin scss*/
+
+@mixin typo {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+@mixin gradient__text {
+    background: $gradient-text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Import Scss and Icon*/
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/material-icons/iconfont/material-icons.css";
+
+/* Global Style */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: $color-bg;
+}
+
+
+/*Start Header*/
+
+header {
+    padding: 2% 0;
+    .navbar {
+        .navbar-brand {
+            img {
+                width: 62.56px;
+                height: 16.02px;
+            }
+        }
+        .navbar-toggler {
+            background-color: #fff;
+            outline: none;
+        }
+        .navbar-collapse {
+            ul {
+                li {
+                    a {
+                        @include typo;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .block-btn {
+            .btn-sign-in {
+                @include typo;
+            }
+            .btn-sign-up {
+                @include typo;
+                background-color: $color-subtext;
+                width: 120px;
+                height: 50px;
+            }
+        }
+    }
+}
+
+
+/*End Header*/
+
+
+/*Start Home*/
+
+.description {
+    h1 {
+        font-family: $font-family;
+        font-weight: 800;
+        font-size: 62px;
+        line-height: 75px;
+        letter-spacing: -0.04em;
+        @include gradient__text;
+        @media (max-width: 991px) {
+            & {
+                font-size: 34px;
+                line-height: 45px;
+            }
+        }
+    }
+    p {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: $color-text;
+    }
+    form {
+        input {
+            flex: 2 1;
+            min-height: 50px;
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            background: $color-footer;
+            border: 2px solid $color-footer;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            outline: none;
+            @media (max-width: 565px) {
+                & {
+                    flex: 1 1;
+                }
+            }
+        }
+        button {
+            flex: 0.6 1;
+            min-height: 50px;
+            background: $color-subtext;
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 27px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    .block-people {
+        .group-images {
+            img {
+                &:nth-child(1) {
+                    z-index: -6;
+                }
+                &:nth-child(2) {
+                    margin-left: -6%;
+                    z-index: -5;
+                }
+                &:nth-child(3) {
+                    margin-left: -6%;
+                    z-index: -4;
+                }
+                &:nth-child(4) {
+                    margin-left: -6%;
+                    z-index: -3;
+                }
+                &:nth-child(5) {
+                    margin-left: -6%;
+                    z-index: -2;
+                }
+                &:nth-child(6) {
+                    margin-left: -6%;
+                    z-index: -1;
+                }
+            }
+            span {
+                background: #13DED2;
+                border: 2.08948px solid #FFFFFF;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                display: inline-block;
+                margin-left: -12px;
+                font-family: $font-family;
+                font-style: normal;
+                font-weight: 800;
+                font-size: 8px;
+                line-height: 38px;
+                color: $color-bg;
+            }
+        }
+        .people-number {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 38px;
+        }
+    }
+}
+
+.image {
+    img {
+        @media (max-width: 991px) {
+            & {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/*End Home*/
+
+
+/*Start whatgpt3 */
+
+.whatgpt3 {
+    padding: 2rem;
+    background: $color-footer;
+    background: radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    .features {
+        .features-title {
+            div {
+                width: 38px;
+                height: 3px;
+                background: $gradient-bar;
+                margin-bottom: 0.5rem;
+            }
+            h3 {
+                font-family: $font-family;
+                font-weight: 800;
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: -0.04em;
+            }
+        }
+        .features-text {
+            p {
+                font-family: $font-family;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 30px;
+                color: $color-text;
+            }
+        }
+    }
+    .whatgpt3-heading {
+        h2 {
+            @include gradient__text;
+            font-family: $font-family;
+            max-width: 510px;
+            font-weight: 800;
+            font-size: 34px;
+            line-height: 45px;
+            @media (max-width: 991px) {
+                & {
+                    font-size: 25px;
+                    line-height: 35px;
+                }
+            }
+        }
+        p {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 30px;
+            color: $color-subtext;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/*End whatgpt3*/
+
+
+/*Start Features*/
+
+.options {
+    .features-heading {
+        h2 {
+            @include gradient__text;
+            font-family: $font-family;
+            max-width: 510px;
+            font-weight: 800;
+            font-size: 34px;
+            line-height: 45px;
+            @media (max-width: 991px) {
+                & {
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+            }
+        }
+        p {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 30px;
+            color: $color-subtext;
+            cursor: pointer;
+        }
+    }
+    .features-title {
+        div {
+            width: 38px;
+            height: 3px;
+            background: $gradient-bar;
+            margin-bottom: 0.5rem;
+        }
+        h3 {
+            font-family: $font-family;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.04em;
+        }
+    }
+    .features-text {
+        p {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 30px;
+            color: $color-text;
+        }
+    }
+}
+
+
+/*End Features*/
+
+
+/*Start Possibility*/
+
+.possibility {
+    .options {
+        margin-top: 29%;
+        @media (max-width: 991px) {
+            & {
+                margin-top: 0;
+            }
+        }
+        h4 {
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 30px;
+            color: #71E5FF;
+        }
+        h2 {
+            @include gradient__text;
+            font-family: $font-family;
+            max-width: 510px;
+            font-weight: 800;
+            font-size: 34px;
+            line-height: 45px;
+            @media (max-width: 991px) {
+                & {
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+            }
+        }
+        p {
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            color: $color-text;
+        }
+        h5 {
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 30px;
+            color: $color-subtext;
+        }
+    }
+    .cta {
+        padding: 2rem;
+        margin: 4rem;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        background: $gradient-bar;
+        .cta-content {
+            p {
+                font-family: $font-family;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 30px;
+                color: #0E0E0E;
+            }
+            h4 {
+                font-family: $font-family;
+                font-weight: 800;
+                font-size: 24px;
+                line-height: 45px;
+                color: #000000;
+            }
+        }
+        .cta-btn {
+            button {
+                background: #000000;
+                border-radius: 40px;
+                font-family: $font-family;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 30px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+
+/*End Possibility*/
+
+
+/*Start Blog*/
+
+.blog {
+    .heading {
+        h2 {
+            @include gradient__text;
+            font-family: $font-family;
+            font-weight: 800;
+            font-size: 62px;
+            line-height: 75px;
+            letter-spacing: -0.04em;
+            @media (max-width: 991px) {
+                & {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+    .card {
+        background: $color-footer;
+        .card-body {
+            p {
+                font-family: $font-family;
+                font-weight: 700;
+                font-size: 11.649px;
+                line-height: 35px;
+            }
+            h4 {
+                font-family: $font-family;
+                font-style: normal;
+                font-weight: 800;
+                font-size: 25.11px;
+                line-height: 30px;
+                margin-bottom: 5rem;
+                cursor: pointer;
+            }
+        }
+        .card-footer {
+            p {
+                font-family: $font-family;
+                font-weight: 700;
+                font-size: 11.649px;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+
+/*End Blog*/
+
+
+/*Start Footer*/
+
+.footer {
+    background: $color-footer;
+    padding: 0 11%;
+    .heading {
+        h2 {
+            @include gradient__text;
+            font-family: $font-family;
+            font-weight: 800;
+            font-size: 62px;
+            line-height: 75px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            @media (max-width: 991px) {
+                & {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+    .btn {
+        padding: 1rem;
+        border: 1px solid #fff;
+        margin-bottom: 10rem;
+        cursor: pointer;
+        width: 230px;
+        p {
+            box-sizing: border-box;
+            font-family: $font-family;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+    .links {
+        @media (max-width: 565px) {
+            & {
+                flex-direction: column;
+            }
+        }
+        .links-logo {
+            img {
+                width: 118px;
+                height: 30px;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-family: $font-family;
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+        .links-div {
+            h4 {
+                font-family: $font-family;
+                font-size: 14px;
+                line-height: 16px;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-family: $font-family;
+                font-size: 12px;
+                line-height: 14px;
+                margin: 0.5rem 0;
+                cursor: pointer;
+            }
+        }
+        .copyright {
+            p {
+                font-family: $font-family;
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+    }
+}
+
+
+/*Start Footer*/
